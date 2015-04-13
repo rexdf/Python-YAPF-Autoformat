@@ -94,7 +94,6 @@ class PyapfCommand(sublime_plugin.TextCommand):
                         self.view.replace(edit, selection, output)
                     else:
                         try:
-                            # self.smart_failure(output_err)
                             print(output_err)
 
                         # Catching too general exception
