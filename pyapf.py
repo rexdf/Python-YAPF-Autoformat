@@ -83,7 +83,11 @@ class PyapfCommand(sublime_plugin.TextCommand):
                            "--verify", "--in-place", py_filename]
 
                     print('Running {0}'.format(cmd))
-                    proc = subprocess.Popen(cmd, stderr=subprocess.PIPE)
+                    startupinfo = subprocess.STARTUPINFO()
+                    startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                    proc = subprocess.Popen(cmd, startupinfo=startupinfo,
+                                            stderr=subprocess.PIPE,
+                                            stdout=subprocess.PIPE)
 
                     output, output_err = proc.communicate()
 
