@@ -1,5 +1,11 @@
-# Python-YAPF-Autoformat
+### Python-YAPF-Autoformat
 Sublime python YAPF Autoformat, google style
+
+##install
+
+```bash
+pip3 install yapf
+```
 
 ## Using
 
